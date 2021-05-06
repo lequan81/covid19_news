@@ -7,25 +7,28 @@
         <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css integrity=sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh crossorigin=anonymous>
     </head>
     <body>
-    <div class="text-center">
-        <h1 class="text-center">COVID-19 NEWS</h1>
-    </div>
-    <br />
-    <div class="container">
-  	<div class="row">
-    <div class="col-sm-6 text-center">
-    <button class="btn btn-primary" id="btn1">Covid-19 - Global</button>
-    </div>
-    <br />
-    <div class="col-sm-6 text-center">
-    <button class="btn btn-primary" id="btn1-vn">Covid-19 - Vietnam</button>
-    </div>
-    </div>
-    </div>
-        
-        <div class="container text-center" id="results">
-        </div>
-    </body>
+		<div class="text-center">
+			<h1 class="text-center">COVID-19 NEWS</h1>
+		</div>
+		<br />
+		<div class="container">
+		  <div class="row">
+		<div class="col-sm-4 text-center">
+		<button class="btn btn-primary" id="btn1">Covid-19 - Global</button>
+		</div>
+		<br />
+		<div class="col-sm-4 text-center">
+		</div>
+		<br />
+		<div class="col-sm-4 text-center">
+		<button class="btn btn-primary" id="btn1-vn">Covid-19 - Vietnam</button>
+		</div>
+		</div>
+		</div>
+			
+			<div class="container text-center" id="results">
+			</div>
+		</body>
     <script>
         var btn1 = document.getElementById("btn1");
         var btn1_vn = document.getElementById("btn1-vn");
@@ -55,12 +58,12 @@
                     results.innerHTML = `
             <h4 class="mt-4"></h4>
             <ul class="list-group mb-4">
-                <li class="list-group-item"><strong>Country: ${data.country}</strong></li>
-                <li class="list-group-item"><strong>Cases: </strong> ${data.cases}</li>
-                <li class="list-group-item"><strong>Today Recovered: </strong> ${data.todayRecovered}</li>
-                <li class="list-group-item"><strong>Cases: </strong> ${data.cases}</li>
-                <li class="list-group-item"><strong>Deaths: </strong> ${data.deaths}</li>
-                <li class="list-group-item"><strong>Today Deaths: </strong> ${data.todayDeaths}</li>
+                <li class="list-group-item active"><strong>Country: ${data.country}</strong></li>
+                <li class="list-group-item list-group-item-danger"><strong>Cases: </strong> ${data.cases}</li>
+                <li class="list-group-item list-group-item-success"><strong>Recovered: </strong> ${data.recovered}</li>
+                <li class="list-group-item list-group-item-dark"><strong>Deaths: </strong> ${data.deaths}</li>
+				<li class="list-group-item list-group-item-info"><strong>Today Recovered: </strong> ${data.todayRecovered}</li>
+                <li class="list-group-item list-group-item-warning"><strong>Today Deaths: </strong> ${data.todayDeaths}</li>
             </ul>
         `;
                 });
@@ -81,10 +84,10 @@
                     data.forEach((element) => {
                         template += `
                 <ul class="list-group mb-4">
-                    <li class="list-group-item"><strong>Country: ${element.country}</strong></li>
-                    <li class="list-group-item"><strong>Cases: </strong> ${element.cases}</li>
-                    <li class="list-group-item"><strong>Recovered: </strong> ${element.recovered}</li>
-                    <li class="list-group-item"><strong>Deaths: </strong> ${element.deaths}</li>
+                    <li class="list-group-item active"><strong>Country: ${element.country}</strong></li>
+                    <li class="list-group-item list-group-item-danger"><strong>Cases: </strong> ${element.cases}</li>
+                    <li class="list-group-item list-group-item-success"><strong>Recovered: </strong> ${element.recovered}</li>
+                    <li class="list-group-item list-group-item-dark"><strong>Deaths: </strong> ${element.deaths}</li>
                 </ul>
             `;
                     });
